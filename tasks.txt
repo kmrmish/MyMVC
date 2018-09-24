@@ -1,0 +1,38 @@
+R&D  tasks:
+ - load models & services in common.php
+ 		=> read all the files from model & service folder and load them
+
+1. create table structure for product
+	Assumptions:
+				there will be only one table named: 'product' in the whole database.
+				category will be a simple select box hence will be stored in product table as a string
+				Images path will be stored in product table itself
+
+2. Add new Product Functionality:
+	- create html view for adding product
+	- create controller and action to show the view
+	- create model for saving all the product informations:
+		=> create getters and setters - getName, setName, getCategory, setCategory, getImage, setImage, getPrice, setPrice, getSize, setSize
+		=> create delete & save functions in the model
+	- modify the controller action to save the product after submitting form info.
+		=> create new object of product model and set the posted data and call save() to save the information.
+		=> if successfully saved - redirect to detail page of product after saving and show the information there.
+		=> if save failed - show the error messge on the add product page.
+
+3. Product detail page:
+	- create html view for showing the product details
+	- show three buttons : 
+		=> Add Products : redirect to empty form of "add product page".
+		=> Edit Product : go to "add product page" and fill the form with current product information to be edited
+		=> Show List : redirect to listing page
+
+4. product listing page:
+	- create html for listing products with buttons 'Edit' & 'Details'
+	- write a service name ProductService
+	- write below functions:
+		=> listProducts, getProductsByName, getProductsById, getProductsByCategory, getProductBySize, getProductByPrice
+	- Create action in controller to show the listing using listProducts Service function.
+
+5. Search Product:
+	- create a search box on the listing page
+	- 
